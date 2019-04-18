@@ -1,0 +1,71 @@
+
+
+####Questions
+>Why do programmers use pseudocode?
+
+A: Pseudocode is used to get started with an algorithm, to start brainstorming about what you want to do, and to be able to convey ideas to non - programmers.
+
+>If you run pseudocode on your computer what would happen?
+
+
+A: nothing, it will not run.
+
+
+
+1. Create a function that takes two numbers and prints out the greater number.
+
+INPUT two numbers
+If the first number is greater than the second number THEN PRINT the first number
+ELSE PRINT the second number
+
+
+function findHigher(a,b){
+if ( a > b){
+  return a; 
+} else if (b > a ){
+  return b;
+}
+}
+findHigher(188,195);
+
+
+2. Create a function that prints out the numbers from 1 to 100.
+
+
+INIT number to 1
+FOR IF number < 100, INCREMENT by 1
+REPEAT-UNTIL number is 100
+ENDFOR
+
+for (let i=1; i <= 100; i++) {
+  console.log(i);
+
+
+3.Create a function that searches for a specific entry in a phonebook.
+
+READ specific person INPUT
+OBTAIN specific person data
+SHOW phone number
+
+Using the pseudocode you wrote for the previous question, implement it in any computer language of your choice.
+
+Create a function that searches for a specific entry in a phonebook.
+
+
+function findEntry(array){
+  let user = array.find(item => item.person == specificPerson);
+console.log(user.phone);
+}
+var specificPerson="John Smith"
+var phonebook=[{"person":"John Smith","phone":"323-3434"},{"person":"James Smith","phone":"445-2321"},{"person":"Sally Smith","phone":"123-4432"}];
+
+console.log(findEntry(phonebook));
+
+
+
+
+
+
+
+
+
