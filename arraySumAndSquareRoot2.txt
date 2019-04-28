@@ -1,0 +1,79 @@
+The following code returns the sum of an array, and it also determines if that number is a perfect square and if it is it returns the square of the sum.
+
+
+var numbers = [14, 5, 4, 1] // sums to 25
+var sum = 0;
+for (var i = 0; i < numbers.length; i++) {
+  sum += numbers[i]
+}
+console.log(sum);
+
+if (sum % Math.sqrt(sum) === 0) {
+  console.log("Perfect square!");
+  console.log(Math.sqrt(sum));
+}
+else {
+  console.log(sum + " This is not a perfect square!");
+}
+
+
+function findSquare(array) {
+  var square1 = array[0];
+    var square2 = array[1];
+      if (square2 == square1) {
+  return square2;
+    } else {
+  return square1 + square2;
+    }
+       } 
+
+var checknums=[8,6];
+findSquare(checknums);
+
+
+this.array = [0, 1, 2, 3]
+this.sum = this.array.reduce(function(a, b) {
+  return a + b;
+});
+
+isSquare(-12) // => false
+isSquare( 5) // => false
+isSquare( 9) // => true
+isSquare(25) // => true
+isSquare(27) // => false
+
+
+
+
+function checkIfArrayIsUnique(myArray) 
+    {
+        for (var i = 0; i < myArray.length; i++) 
+        {
+            for (var j = i+1; j < myArray.length; j++) 
+            {                  
+                    if (myArray[i] == myArray[j]) 
+                    {
+                        return true; // means there are duplicate values
+                    }
+
+            }
+        }
+        return false; // means there are no duplicate values.
+    }
+
+checkIfArrayIsUnique([1,2,5,2,9]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 1. In your own words, explain what clean code is and why it is important.
 
 
-A: Clean code is easy to understand, and it is not duplicative. Each function should perform a particular task. It should be properly indented
+A: Clean code is easy to read and understand, and it is not duplicative. Each function should perform a particular task. It should be properly indented for readability. A function name should contain a verb and be descriptive of what the function will do. A variable should be named with a term that represents what the variable will contain.
 
 
 
@@ -11,7 +11,7 @@ A: An airplane relies on several computer systems, from the black box to the lan
 
 
 3. Would you consider the following to be clean code? Explain why or why not. If not, refactor the code.
-A: I thought it was hard to figure out what was happening- here is my refactor:
+A: I thought it was hard to figure out what was happening with the vague function names- here is my refactor:
 
 
 FUNCTION convertTemperature(degrees, scale)               // Creating a new function
