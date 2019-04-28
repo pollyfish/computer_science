@@ -1,0 +1,173 @@
+1. In your own words, explain what clean code is and why it is important.
+
+
+A: Clean code is easy to understand, and it is not duplicative. Each function should perform a particular task. It should be properly indented
+
+
+
+2. Read this article about Toyota and their use of bad code. Although you may not yet understand all of the topics discussed, think about another commonly used object that relies on computers and explain what would happen if the code was not created to an acceptable standard.
+
+A: An airplane relies on several computer systems, from the black box to the landing gear. If the code was not created correctly. the landing gear may not deploy when the lever is pulled.
+
+
+3. Would you consider the following to be clean code? Explain why or why not. If not, refactor the code.
+A: I thought it was hard to figure out what was happening- here is my refactor:
+
+
+FUNCTION convertTemperature(degrees, scale)               // Creating a new function
+ IF scale = "Farenheit" THEN               // Check if scale is equal "Farenheit"
+ SET temperature to (degrees−32) * (5/9)       // Formula to convert degrees fahrenheit to celsius
+
+ ELSE IF scale = "Celsius" THEN          // If scale is equal to "Celsius"
+ SET temperature to degrees * 1.8000 + 32.00   // Formula to convert degrees celsius to fahrenheit
+
+ PRINT temperature + scale                       // Print result
+ END IF
+END FUNCTION
+
+4.Would you consider the following to be clean code? Explain why or why not. If not, refactor the code.
+I think the code seems ok
+
+FUNCTION calcPercent(sum, total)
+ IF NOT(total = 0) THEN
+     SET percentage to sum / total * 100
+ ELSE
+   PRINT "Sorry, cannot divide by 0"
+ END IF
+
+ PRINT percentage
+END FUNCTION
+
+
+5.Using pseudocode, refactor the code for the following examples using the principles you have learned in this checkpoint.
+
+a. The following function prints the subtotal of a customer's transaction and receives payment accordingly.
+
+
+
+
+FUNCTION calculateAmount(subTotal, discountRate, salesTax)
+  SET total to (subTotal-discountRate) + salesTax
+    PRINT "Total " + total
+      END FUNCTION
+
+FUNCTION checkOutCustomer(paymentType)
+  IF paymentType=cash 
+   THEN SET return to cash - total
+     PRINT "change due " + return
+ELSE IF paymentType=CREDIT
+   THEN
+     PRINT "Thank you, card total " + total
+
+
+
+
+
+
+b. The following function checks out a book if there are no issues with the guest's account.
+
+FUNCTION checkoutBook(book, guest)
+ IF guest.accountActive THEN
+     IF NOT(guest.hasOverdueBooks) THEN
+         IF guest.outstandingFees = 0 THEN
+           APPEND book to guest.books
+           SET book.status to "Checked Out"
+           PRINT "Your books have been issued."
+         END IF
+     END IF
+ ELSE
+     PRINT "Unable to check out book."
+ END IF
+END FUNCTION
+
+
+FUNCTION checkoutBook(guest,book)
+  WHILE  guest.accountActive
+   IF guest.hasoverdueBooks AND guest.hasoutstandingFees
+	PRINT "Unable to check out book."
+ELSE 
+     SET book.status to "Checked Out"
+     PRINT "Your books have been issued."
+ END IF
+END FUNCTION
+
+
+
+c. The following class is a code snippet that should support the transactions a customer can perform at an ATM.
+
+CLASS BankAccount
+
+ FUNCTION displayBalance(balance)
+    PRINT "Your balance " + balance
+ END FUNCTION
+
+ FUNCTION deposit(amount)
+    SET balance to balance + amount
+      PRINT "Your Deposit was sucessfully received"
+PRINT "Your deposit " + amount
+ END FUNCTION
+
+ FUNCTION withdraw(withdrawal)
+     IF balance > amount THEN
+       SET balance to balance - withdrawal
+	PRINT "Your new balance: " + balance
+     END
+ END FUNCTION
+
+ FUNCTION creditCardOffer
+     IF NOT(customer.hasCreditCard) THEN
+         CALL offerCreditCard
+	   PRINT "Would you like to add a credit card to your account?"
+     END
+ END FUNCTION
+
+ FUNCTION checkStatus
+     IF NOT(customer.hasCheckingAccount) THEN
+         CALL offerCheckingAccount
+          PRINT "Would you like to set up a checking account?" 
+     END
+ END FUNCTION
+
+ ....
+ ....
+ ....
+
+END
+Programming Questions
+You may do the following problems in any language of your choice. Use the clean code principles taught in this section while writing the code.
+
+6. Square Given an array of integers, find out whether the sum of the integers is a perfect square. If it is a perfect square, return the square root, otherwise return the sum.
+
+
+var numbers = [14, 5, 4, 2] // sums to 25
+    var sum = 0;
+      for (var i = 0; i < numbers.length; i++) {
+          sum += numbers[i]
+          }
+
+            if (sum % Math.sqrt(sum) === 0) {
+          console.log("This is a perfect square!");
+      console.log(Math.sqrt(sum));
+          } else {
+      console.log(sum + " is not a perfect square!");
+          }
+
+
+
+7. Duplicate Given an array of integers, find out whether the array contains any duplicate elements. The function should return true if any value appears at least twice in the array, and false if every element is distinct.
+
+function compareNumbers(array) {
+        for (var i = 0; i < array.length; i++) {
+            for (var j = i+1; j < array.length; j++) {      
+                    if (array[i] == array[j]) {
+                        return true;  
+                    }
+            }
+        }
+        return false; 
+    }
+compareNumbers([1,2,5,7,9]);
+
+
+
+

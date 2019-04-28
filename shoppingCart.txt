@@ -1,0 +1,23 @@
+const taxrate=0.08;
+const subtotal=30.00;
+const discount=0.20;
+
+var amount=0;
+
+function calcTax(amount) {
+  return amount * taxrate;
+}
+function calcDiscount(amount) {
+  return amount * discount;
+}
+function formatAmount(amount){
+  return "$" + amount.toFixed(2);
+}
+amount=amount+subtotal;
+amount=amount - calcDiscount(amount);
+amount=amount + calcTax(amount);
+
+console.log("Subtotal: " + formatAmount(subtotal));
+console.log("Discount: " + calcDiscount(amount ));
+console.log("Tax: " + calcTax (amount));
+console.log("your total: " + formatAmount( amount ));
