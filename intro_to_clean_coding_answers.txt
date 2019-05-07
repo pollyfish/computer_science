@@ -5,6 +5,13 @@ A: Clean code is easy to read and understand, and it is not duplicative. Each fu
 
 
 
+
+2. Read this article about Toyota and their use of bad code. Although you may not yet understand all of the topics discussed, think about another commonly used object that relies on computers and explain what would happen if the code was not created to an acceptable standard.
+
+A: An airplane relies on several computer systems, from the black box to the landing gear. If the code was not created correctly. the landing gear may not deploy when the lever is pulled.
+
+
+
 2. Read this article about Toyota and their use of bad code. Although you may not yet understand all of the topics discussed, think about another commonly used object that relies on computers and explain what would happen if the code was not created to an acceptable standard.
 
 A: An airplane relies on several computer systems, from the black box to the landing gear. If the code was not created correctly. the landing gear may not deploy when the lever is pulled.

@@ -1,0 +1,51 @@
+1. A line of people at an amusement park ride.
+
+The line is composed of members, represented as strings.
+There is a front to the line, as well as a back.
+When someone enters the line, place them at the end.
+People may leave the line whenever they see fit, and those behind them take their place.
+Given the above real-world information, use an array data structure to code the following solution.
+
+a) Use an array input: ["Vivian", "Ava", "Josh", "Patrick", "Mike"]
+b) Insert a new person, "Mary" at the end of the line. In other words, you should insert Mary after Mike.
+c) Find a person in line named "Josh." This function should return the position of 2 in the array, (recall that arrays are 0-based).
+d) Find a person in line named "Emily." What should your function return if it does not find the item in the array? -1
+e) What if Ava wants to allow a friend, "Melissa", to cut in line in front of her? How would you code this so Melissa appears before Ava?
+f) If Patrick wants to leave the line, how would you delete him from the array?
+
+var array=["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+array.push("Mary"); // add Mary to end of line
+console.log(array);  
+array.indexOf("Josh"); returns 2
+array.indexOf("Emily"); // returns -1
+array.splice(1,0,"Melissa"); //allows Melissa to cut in line
+console.log(array);
+array.splice(4,1); // deletes Patric from the lin
+console.log(array);
+
+
+
+Provide another real-world example that you can model using a data structure.
+
+How would your data structure allow developers to access and manipulate the data?
+
+
+Below is a data structure for an array of field rep photos. Field reps are named by their id. Whenever a rep gets their rep photo updated, the old file needs to be eliminated so there are not duplicates in the system.
+Simply using the .push method developers could update the array list.
+
+
+let repPhotos = [{id: "0063889",date: "2018-02-21"},{id: "5454459", date: "2017-07-10"}, {id: "0112459",    date: "2019-02-22"},{id: "0063889", date: "2019-02-23"},{id: "0112459", date: "2018-02-22"},{id: "5454459", date: "2017-07-10"}];
+
+repPhotos.push({id:"0754555",date:"2018-05-08"});
+
+
+
+let cleanList = Object.values(repPhotos.reduce((a, {id, date}) => {
+  if (a[id]) {
+    if (a[id].date < date) a[id] = {id, date};
+  } else a[id] = {id, date};
+  
+  return a;
+}, {}));
+
+console.log(cleanList);
