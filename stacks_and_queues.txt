@@ -1,0 +1,123 @@
+Question
+
+
+1. What is the main difference between a stack and a queue?
+
+Answer:
+A stack is like a pile, an object gets added to the top of the stack, and that top item is always the first to be removed from the stack. So the last item added to the stack, is the first item to be removed.
+
+A queue is like a line. The first item in the line, is the first item to be removed.
+
+2. What are the similarities between stacks and queues?
+Answer: They both are non primitive data structures.
+
+
+3. Imagine you are an engineer tasked with implementing the UNDO and REDO options in a word processor such as Microsoft Word. Which data structure would you use for each option and why?
+
+Answer: A stack data structure because users would want to undo the most recent mistake they made, they would not necessarily want to change the very first part of their paragraph.
+
+
+Programming Questions
+
+1. Given a string, reverse it using a stack. For example, the string "Bloc!" should be converted to "!colB".
+
+
+ var reversechars = [];
+    function reverseStuff() {
+
+      reversechars.push("c");       
+      reversechars.push("a");
+      reversechars.push("t"); 
+      reversechars.push("s");
+    console.log(reversechars); 
+ var reverseStr = "";
+    while (reversechars.length > 0) {
+        reverseStr += reversechars.pop();
+    }
+        return reverseStr;
+}
+ console.log(reverseStuff());
+
+
+
+
+2. Implement the pop method of a stack using one queue. Make a FIFO data structure mirror the functionality of a LIFO data structure. Since the internal list is not the same as defined in the checkpoint, it may help to rewrite the pseudocode first.
+
+
+class Stack {
+    constructor(){
+     this.pop = function(queue){
+       var newQueue = [];
+       var itemToRemove = [];
+       
+       for(var i=0;i<queue.length; i++){
+         if(i==queue.length-1){
+           itemToRemove.push(queue[i]);
+         }else{
+           newQueue.push(queue[i]);
+         }
+       }
+       console.log(newQueue);
+       return itemToRemove;   
+       
+     }
+   }
+}
+
+var stack = new Stack();
+console.log(stack.pop('Polly'))
+
+
+To delete an item, take all of the elements in the queue one at a time and put them at the end of the queue, except for the last one which should be removed and returned.
+
+
+1. Implement the enqueue and dequeue methods defined in the checkpoint inside your own Queue class.
+
+FUNCTION enqueue(element)
+  APPEND element to the end of the list
+END FUNCTION
+FUNCTION dequeue
+  SET temp to the first element
+  REMOVE FIRST element of list from list
+  RETURN temp
+END FUNCTION
+
+
+
+class Queue {
+   constructor(){
+     this.elements = []
+   }
+  
+ // enqueue function
+
+  enqueue(element){    
+    this.elements.push(element);
+}
+
+  // dequeue function
+
+  dequeue(){
+    if(this.isEmpty())
+        return "Empty";
+    return this.elements.shift();
+}
+  
+isEmpty(){
+    return this.elements.length ==0;
+}
+
+}
+
+var queue = new Queue();
+
+queue.enqueue(10)
+queue.enqueue(10)
+
+console.log(queue)
+queue.dequeue()
+console.log(queue)
+
+
+
+
